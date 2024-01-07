@@ -1,0 +1,91 @@
+body {
+    background-color: #527853;
+}
+
+.main {
+    background-color: #F9E8D9;
+    border-radius: 20px;
+    box-shadow: 5px 5px 7px black;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 15px;
+    width: 60%;
+}
+
+h1 {
+    color: #EE7214;
+    font-size: 50px;
+    text-align: center;
+}
+
+select {
+    border: none;
+    border-radius: 8px;
+    color: #F7B787;
+    display: block;
+    font-size: 30px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding: 10px 15px;
+    width: 50%;
+}
+
+.times {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    width: 80%;
+}
+
+.citie {
+    border-bottom: dotted #F7B787;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding:30px;
+}
+
+.place {
+    align-self: end;
+    font-size: 40px;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.date {
+    align-self: start;
+    font-size: 20px;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.time {
+    align-self: center;
+    color: #F7B787;
+    font-size: 80px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    place-self: center;
+}
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+}
+
+a {
+    color: #ff0090;
+}
+
+a:hover {
+    cursor: pointer;
+    opacity: 0.4;
+    size: 120%;
+}
+
+a:visited {
+    color: palevioletred;
+}
