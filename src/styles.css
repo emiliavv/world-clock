@@ -46,7 +46,7 @@ select {
     padding:30px;
 }
 
-.button {
+[class^=button] {
     align-self: center;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -56,6 +56,12 @@ select {
 }
 
 button {
+    align-self: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: center;
     color:#F7B787;
     border: 3px solid #F7B787;
     font-size: 40px;
