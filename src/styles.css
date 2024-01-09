@@ -41,31 +41,54 @@ select {
 .citie {
     border-bottom: dotted #F7B787;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr 3fr;
     grid-template-rows: 1fr 1fr;
     padding:30px;
+}
+
+.button {
+    align-self: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: center;
+}
+
+button {
+    color:#F7B787;
+    border: 3px solid #F7B787;
+    font-size: 40px;
+    text-align: center;
+    transition: all 0.5 ease-in-out;
+}
+
+button:hover {
+    color: white;
+    background-color: #F7B787;
+    opacity: 0.6;
 }
 
 .place {
     align-self: end;
     font-size: 40px;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .date {
     align-self: start;
     font-size: 20px;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .time {
     align-self: center;
     color: #F7B787;
     font-size: 80px;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
     place-self: center;

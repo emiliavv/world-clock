@@ -16,16 +16,23 @@ lisbonTime.innerHTML = place2.format("h:mm:ss [<small>]A[</small>]")
 
 
 function addTimes(event) {
-    let place = moment().tz(event.target.value)
+    let selectedCity = event.target.value;
+    let place = moment().tz(selectedCity);
     let clocks = document.querySelector(".clocks")
     clocks.innerHTML += `
     <div class="times">
-            <div class="citie" id="paris">
-            <div class="place">${event.target.value.replace("_", " ").split("/")[1]}</div>
+            <div class="button"><button>+</button></div>
+            <div class="citie">
+            <div class="place">${event.target.value.replace("_", " ").split("/")[1]}, ${event.target.value.replace("_", " ").split("/")[0]}</div>
             <div class="date">${place.format("dddd, Do MMM YYYY")}</div>
-            <div class="time">${place.format("h:mm:ss [<small>]A[</small>]")}</div>
+            <div class="time" id="${selectedCity}">${place.format("h:mm:ss [<small>]A[</small>]")}</div>
     </div>
    `
+    setInterval(() => {
+        let currentTime = moment().tz(selectedCity);
+        document.getElementById(selectedCity).innerHTML = currentTime.format("h:mm:ss [<small>]A[</small>]");
+        }, 1000);
 }
-let chooseCity = document.querySelector("#chooseCity")
+let c
+hooseCity = document.querySelector("#chooseCity")
 chooseCity.addEventListener("change", addTimes)
