@@ -61,10 +61,12 @@ button {
     font-size: 40px;
     text-align: center;
     transition: all 0.5 ease-in-out;
+    width: 40px;
 }
 
 button:hover {
     color: white;
+    cursor: pointer;
     background-color: #F7B787;
     opacity: 0.6;
 }

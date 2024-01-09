@@ -21,8 +21,8 @@ function addTimes(event) {
     let clocks = document.querySelector(".clocks")
     clocks.innerHTML += `
     <div class="times">
-            <div class="button"><button>+</button></div>
             <div class="citie">
+            <div class="button"><button>-</button></div>
             <div class="place">${event.target.value.replace("_", " ").split("/")[1]}, ${event.target.value.replace("_", " ").split("/")[0]}</div>
             <div class="date">${place.format("dddd, Do MMM YYYY")}</div>
             <div class="time" id="${selectedCity}">${place.format("h:mm:ss [<small>]A[</small>]")}</div>
