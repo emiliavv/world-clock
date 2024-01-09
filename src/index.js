@@ -1,10 +1,16 @@
 setInterval(()=> {
 let krakow = document.querySelector("#krakow")
 let krakowDate = krakow.querySelector(".date")
-let place = moment().tz("Poland")
-krakowDate.innerHTML = place.format("dddd, Do MMM YYYY")
+let place1 = moment().tz("Poland")
+krakowDate.innerHTML = place1.format("dddd, Do MMM YYYY")
 krakowTime = krakow.querySelector(".time")
-krakowTime.innerHTML = place.format("h:mm:ss [<small>]A[</small>]")
+krakowTime.innerHTML = place1.format("h:mm:ss [<small>]A[</small>]")
+let rome = document.querySelector("#rome")
+let romeDate = rome.querySelector(".date")
+let place2 = moment().tz("Europe/Rome")
+romeDate.innerHTML = place2.format("dddd, Do MMM YYYY")
+romeTime = rome.querySelector(".time")
+romeTime.innerHTML = place2.format("h:mm:ss [<small>]A[</small>]")
 }, 1000)
 
 
