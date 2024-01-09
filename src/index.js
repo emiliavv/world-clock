@@ -12,17 +12,19 @@ function addTimes(event) {
     let selectedCity = event.target.value;
     let place = moment().tz(selectedCity);
     let times = document.querySelector(".times")
-    times.innerHTML += `
-        <div class="citie">
-        <div class="button" id="button-${selectedCity}"><button>-</button></div>
-        <div class="place">${event.target.value.replace("_", " ").split("/")[1]}, ${event.target.value.replace("_", " ").split("/")[0]}</div>
-        <div class="date">${place.format("dddd, Do MMM YYYY")}</div>
-        <div class="time" id="${selectedCity}">${place.format("h:mm:ss [<small>]A[</small>]")}</div>
-   `
-    setInterval(() => {
-        let currentTime = moment().tz(selectedCity);
-        document.getElementById(selectedCity).innerHTML = currentTime.format("h:mm:ss [<small>]A[</small>]");
-        }, 1000);
+    if (document.getElementById(`${event.target.value}`) === null) {
+         times.innerHTML += `
+            <div class="citie">
+            <div class="button" id="button-${selectedCity}"><button>-</button></div>
+            <div class="place">${event.target.value.replace("_", " ").split("/")[1]}, ${event.target.value.replace("_", " ").split("/")[0]}</div>
+            <div class="date">${place.format("dddd, Do MMM YYYY")}</div>
+            <div class="time" id="${selectedCity}">${place.format("h:mm:ss [<small>]A[</small>]")}</div>
+        `
+        setInterval(() => {
+            let currentTime = moment().tz(selectedCity);
+            document.getElementById(selectedCity).innerHTML = currentTime.format("h:mm:ss [<small>]A[</small>]");
+            }, 1000);   
+        }
 }
 
 let chooseCity = document.querySelector("#chooseCity")
@@ -34,7 +36,6 @@ function removeTime(event) {
     clockToRemove.parentElement.remove();
 }
 
-// Add the removeTime function to the click event of the button
 let clocksContainer = document.querySelector(".clocks");
 clocksContainer.addEventListener("click", function(event) {
     if (event.target.tagName === "BUTTON") {
